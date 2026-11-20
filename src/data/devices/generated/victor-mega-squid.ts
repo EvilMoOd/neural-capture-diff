@@ -1,0 +1,110 @@
+import type { Device } from '../../../types'
+
+export const victorMegaSquid: Device = {
+  id: 'victor-mega-squid',
+  name: 'Victor Mega Squid',
+  note: 'Quad Cortex Factory Captures This is a capture of Victory® Super Kraken® amp.',
+  captures: [
+    {
+      id: 1,
+      params: {
+        'Preamp Focus': 'Off',
+        'Clean/Crunch': 'Clean',
+        Gain1: 4,
+        'Gain1/Gain2': 'Gain1',
+        Bass: 8,
+        Middle: 5,
+        Treble: 4,
+        Master: 5,
+      },
+    },
+    {
+      id: 2,
+      params: {
+        'Preamp Focus': 'Off',
+        'Clean/Crunch': 'Clean',
+        Gain1: 8,
+        'Gain1/Gain2': 'Gain1',
+        Bass: 8,
+        Middle: 4,
+        Treble: 3,
+        Master: 5,
+      },
+    },
+    {
+      id: 3,
+      params: {
+        'Preamp Focus': 'Off',
+        'Clean/Crunch': 'Crunch',
+        Gain1: 8,
+        'Gain1/Gain2': 'Gain1',
+        Bass: 8,
+        Middle: 4,
+        Treble: 3,
+        Master: 5,
+      },
+    },
+    {
+      id: 4,
+      params: {
+        'Preamp Focus': 'On',
+        'Clean/Crunch': 'Crunch',
+        Gain1: 8,
+        'Gain1/Gain2': 'Gain1',
+        Bass: 8,
+        Middle: 4,
+        Treble: 3,
+        Master: 5,
+      },
+    },
+    {
+      id: 5,
+      params: {
+        'Preamp Focus': 'Off',
+        'Gain1/Gain2': 'Gain2',
+        Gain2: 5,
+        Bass: 8,
+        Middle: 4,
+        Treble: 3,
+        Master: 5,
+      },
+    },
+    {
+      id: 6,
+      params: {
+        'Preamp Focus': 'Off',
+        'Gain1/Gain2': 'Gain2',
+        Gain2: 8,
+        Bass: 8,
+        Middle: 7,
+        Treble: 3,
+        Master: 5,
+      },
+    },
+    {
+      id: 7,
+      params: {
+        'Preamp Focus': 'On',
+        'Gain1/Gain2': 'Gain2',
+        Gain2: 8,
+        Bass: 8,
+        Middle: 7,
+        Treble: 3,
+        Master: 5,
+      },
+    },
+    {
+      id: 8,
+      params: {
+        'Preamp Focus': 'On',
+        'Clean/Crunch': 'Crunch',
+        Gain1: 3,
+        'Gain1/Gain2': 'Gain1',
+        Bass: 4,
+        Middle: 6,
+        Treble: 3,
+        Master: 5,
+      },
+    },
+  ],
+}

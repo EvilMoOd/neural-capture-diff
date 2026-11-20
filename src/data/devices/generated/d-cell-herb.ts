@@ -1,0 +1,73 @@
+import type { Device } from '../../../types'
+
+export const dCellHerb: Device = {
+  id: 'd-cell-herb',
+  name: 'D-Cell Herb',
+  note: 'Quad Cortex Factory Captures This is a capture of Diezel® Herbert® with TAD® 6550A-STR 1820 power amp tubes.',
+  captures: [
+    {
+      id: 1,
+      params: {
+        Channel: 2,
+        Gain: 7,
+        'Gain +/-': 'minus',
+        Volume: 4.5,
+        Treble: 6.5,
+        Middle: 3.5,
+        Bass: 3,
+        Midcut: 'Off',
+        'Master Volume': 4.5,
+        Presence: 4.5,
+        Deep: 4.5,
+      },
+    },
+    {
+      id: 2,
+      params: {
+        Channel: 2,
+        Gain: 8,
+        'Gain +/-': 'plus',
+        Volume: 4,
+        Treble: 6.5,
+        Middle: 4,
+        Bass: 4,
+        Midcut: 'Off',
+        'Master Volume': 4.5,
+        Presence: 5.5,
+        Deep: 4,
+      },
+    },
+    {
+      id: 3,
+      params: {
+        Channel: 3,
+        Gain: 6.5,
+        Volume: 4,
+        Treble: 10,
+        Middle: 8,
+        Bass: 10,
+        Midcut: 'Off',
+        'Master Volume': 4,
+        Presence: 6,
+        Deep: 6.5,
+      },
+    },
+    {
+      id: 4,
+      params: {
+        Channel: 3,
+        Gain: 8,
+        Volume: 3,
+        Treble: 6.5,
+        Middle: 8,
+        Bass: 6.5,
+        Midcut: 'On',
+        Intensity: 3.5,
+        Level: 7,
+        'Master Volume': 3.5,
+        Presence: 5,
+        Deep: 5,
+      },
+    },
+  ],
+}

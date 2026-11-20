@@ -1,0 +1,113 @@
+import type { Device } from '../../../types'
+
+export const bognaFish: Device = {
+  id: 'bogna-fish',
+  name: 'Bogna Fish',
+  note: 'Quad Cortex Factory Captures This is a capture of Bogner® Fish Preamp®',
+  captures: [
+    {
+      id: 1,
+      params: {
+        Channel: 'Clean',
+        Treble: 8,
+        Middle: 5,
+        Bass: 8,
+        'Jazz/Funk': 'Funk',
+        Volume: 8,
+        Presence: 5,
+        'Master Vol': 10,
+      },
+    },
+    {
+      id: 2,
+      params: {
+        Channel: 'Clean',
+        Treble: 8,
+        Middle: 5,
+        Bass: 8,
+        'Jazz/Funk': 'Jazz',
+        Volume: 8,
+        Presence: 5,
+        'Master Vol': 10,
+      },
+    },
+    {
+      id: 3,
+      params: {
+        Channel: 'Brown',
+        Treble: 5,
+        Middle: 8,
+        Bass: 8,
+        'Brown Volume': 7.8,
+        'Brown Gain': 2,
+        Presence: 5,
+        'Master Vol': 10,
+      },
+    },
+    {
+      id: 4,
+      params: {
+        Channel: 'Brown',
+        Treble: 5,
+        Middle: 8,
+        Bass: 8,
+        'Brown Volume': 7.8,
+        'Brown Gain': 8,
+        Presence: 5,
+        'Master Vol': 10,
+      },
+    },
+    {
+      id: 5,
+      params: {
+        Channel: 'Strato',
+        Treble: 5,
+        Middle: 6,
+        Bass: 7,
+        'Strato Volume': 8,
+        'Strato Gain': 2,
+        Presence: 5,
+        'Master Vol': 10,
+      },
+    },
+    {
+      id: 6,
+      params: {
+        Channel: 'Strato',
+        Treble: 5,
+        Middle: 6,
+        Bass: 7,
+        'Strato Volume': 8,
+        'Strato Gain': 8,
+        Presence: 5,
+        'Master Vol': 10,
+      },
+    },
+    {
+      id: 7,
+      params: {
+        Channel: 'Shark',
+        Volume: 6.5,
+        Treble: 5,
+        Bass: 8,
+        'Bright/Dark': 'Dark',
+        Balls: 5,
+        Presence: 5,
+        'Master Vol': 10,
+      },
+    },
+    {
+      id: 8,
+      params: {
+        Channel: 'Shark',
+        Volume: 6.5,
+        Treble: 5,
+        Bass: 6.5,
+        'Bright/Dark': 'Bright',
+        Balls: 8,
+        Presence: 5,
+        'Master Vol': 10,
+      },
+    },
+  ],
+}

@@ -1,0 +1,113 @@
+import type { Device } from '../../../types'
+
+export const caM6rifle: Device = {
+  id: 'ca-m6rifle',
+  name: 'CA M6Rifle',
+  note: 'Quad Cortex Factory Captures This is a capture of Mesa Boogie® M6 Carbine® amp.',
+  captures: [
+    {
+      id: 1,
+      params: {
+        'Active/Passive': 'Passive',
+        Gain: 6.5,
+        Bass: 6.5,
+        'Pull Deep': 'Off',
+        Mid: 5,
+        Voice: 3,
+        Treble: 6,
+        Master: 4.5,
+      },
+    },
+    {
+      id: 2,
+      params: {
+        'Active/Passive': 'Passive',
+        Gain: 8.5,
+        Bass: 6.5,
+        'Pull Deep': 'Off',
+        Mid: 5,
+        Voice: 3,
+        Treble: 9,
+        Master: 4.5,
+      },
+    },
+    {
+      id: 3,
+      params: {
+        'Active/Passive': 'Passive',
+        Gain: 5.5,
+        Bass: 6,
+        'Pull Deep': 'Off',
+        Mid: 5,
+        Voice: 2,
+        Treble: 6,
+        Master: 4.5,
+      },
+    },
+    {
+      id: 4,
+      params: {
+        'Active/Passive': 'Passive',
+        Gain: 6.5,
+        Bass: 5.5,
+        'Pull Deep': 'Off',
+        Mid: 4,
+        Voice: 2,
+        Treble: 7.5,
+        Master: 4.5,
+      },
+    },
+    {
+      id: 5,
+      params: {
+        'Active/Passive': 'Passive',
+        Gain: 5.5,
+        Bass: 7,
+        'Pull Deep': 'Off',
+        Mid: 3,
+        Voice: 1,
+        Treble: 9.5,
+        Master: 4.5,
+      },
+    },
+    {
+      id: 6,
+      params: {
+        'Active/Passive': 'Passive',
+        Gain: 6.5,
+        Bass: 6.5,
+        'Pull Deep': 'Off',
+        Mid: 3.5,
+        Voice: 4,
+        Treble: 6.5,
+        Master: 4.5,
+      },
+    },
+    {
+      id: 7,
+      params: {
+        'Active/Passive': 'Passive',
+        Gain: 6.5,
+        Bass: 6.5,
+        'Pull Deep': 'Off',
+        Mid: 6.5,
+        Voice: 5,
+        Treble: 6.5,
+        Master: 4.5,
+      },
+    },
+    {
+      id: 8,
+      params: {
+        'Active/Passive': 'Passive',
+        Gain: 7,
+        Bass: 6,
+        'Pull Deep': 'Off',
+        Mid: 3.5,
+        Voice: 2,
+        Treble: 8,
+        Master: 4.5,
+      },
+    },
+  ],
+}

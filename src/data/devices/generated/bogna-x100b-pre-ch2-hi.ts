@@ -1,0 +1,113 @@
+import type { Device } from '../../../types'
+
+export const bognaX100bPreCh2Hi: Device = {
+  id: 'bogna-x100b-pre-ch2-hi',
+  name: 'Bogna X100B Pre Ch2 Hi',
+  note: "Quad Cortex Factory Captures This is a capture of Bogner® Ecstasy® 100B® amp’s channel 2 preamp section.",
+  captures: [
+    {
+      id: 1,
+      params: {
+        CH: 2,
+        Volume: 6.5,
+        Treble: 6,
+        Middle: 6.5,
+        Bass: 5,
+        Gain: 'Hi',
+        Air: 'Hi',
+        'Pre. EQ': 'Dark',
+      },
+    },
+    {
+      id: 2,
+      params: {
+        CH: 2,
+        Volume: 6.5,
+        Treble: 6.5,
+        Middle: 3.5,
+        Bass: 5,
+        Gain: 'Hi',
+        Air: 'Hi',
+        'Pre. EQ': 'Dark',
+      },
+    },
+    {
+      id: 3,
+      params: {
+        CH: 2,
+        Volume: 8,
+        Treble: 6.5,
+        Middle: 7,
+        Bass: 4,
+        Gain: 'Hi',
+        Air: 'Lo',
+        'Pre. EQ': 'Dark',
+      },
+    },
+    {
+      id: 4,
+      params: {
+        CH: 2,
+        Volume: 8,
+        Treble: 6.5,
+        Middle: 4,
+        Bass: 4,
+        Gain: 'Hi',
+        Air: 'Hi',
+        'Pre. EQ': 'Dark',
+      },
+    },
+    {
+      id: 5,
+      params: {
+        CH: 2,
+        Volume: 6.5,
+        Treble: 6.5,
+        Middle: 8,
+        Bass: 8,
+        Gain: 'Hi',
+        Air: 'Lo',
+        'Pre. EQ': 'Bright',
+      },
+    },
+    {
+      id: 6,
+      params: {
+        CH: 2,
+        Volume: 7,
+        Treble: 6.5,
+        Middle: 3.5,
+        Bass: 7,
+        Gain: 'Hi',
+        Air: 'Hi',
+        'Pre. EQ': 'Bright',
+      },
+    },
+    {
+      id: 7,
+      params: {
+        CH: 2,
+        Volume: 8,
+        Treble: 6.5,
+        Middle: 7.5,
+        Bass: 8,
+        Gain: 'Hi',
+        Air: 'Lo',
+        'Pre. EQ': 'Bright',
+      },
+    },
+    {
+      id: 8,
+      params: {
+        CH: 2,
+        Volume: 8,
+        Treble: 5,
+        Middle: 3.5,
+        Bass: 6,
+        Gain: 'Hi',
+        Air: 'Hi',
+        'Pre. EQ': 'Bright',
+      },
+    },
+  ],
+}

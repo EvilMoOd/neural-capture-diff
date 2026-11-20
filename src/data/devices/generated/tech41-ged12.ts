@@ -1,0 +1,141 @@
+import type { Device } from '../../../types'
+
+export const tech41Ged12: Device = {
+  id: 'tech41-ged12',
+  name: 'Tech41 GED12',
+  note: "Captured Devices: Tech 21® SansAmp® GED-2112®, One Control USA® Mosquite Blender™, Mad Professor Amplification® Fire Red Fuzz®, Digidesign® DigiRack 7-band EQ®",
+  captures: [
+    {
+      id: 1,
+      params: {
+        Drive: 4.5,
+        Mid: 4,
+        'Mid Shift': 220,
+        Blend: 4.5,
+        Bass: 2,
+        Treble: 4,
+        Level: 7,
+      },
+    },
+    {
+      id: 2,
+      params: {
+        Drive: 4.5,
+        Mid: 4,
+        'Mid Shift': 220,
+        Blend: 4.5,
+        Bass: 2,
+        Treble: 4,
+        Level: 7,
+      },
+    },
+    {
+      id: 3,
+      params: {
+        Drive: 4.5,
+        Mid: 4,
+        'Mid Shift': 220,
+        Blend: 4.5,
+        Bass: 2,
+        Treble: 4,
+        Level: 7,
+      },
+    },
+    {
+      id: 4,
+      params: {
+        Drive: 4.5,
+        Mid: 4,
+        'Mid Shift': 220,
+        Blend: 4.5,
+        Bass: 2,
+        Treble: 4,
+        Level: 7,
+      },
+    },
+    {
+      id: 5,
+      params: {
+        Drive: 4.5,
+        Mid: 4,
+        'Mid Shift': 220,
+        Blend: 4.5,
+        Bass: 2,
+        Treble: 4,
+        Level: 7,
+      },
+    },
+    {
+      id: 6,
+      params: {
+        Drive: 4.5,
+        Mid: 4,
+        'Mid Shift': 220,
+        Blend: 4.5,
+        Bass: 2,
+        Treble: 4,
+        Level: 7,
+      },
+    },
+    {
+      id: 7,
+      params: {
+        Drive: 4.5,
+        Mid: 4,
+        'Mid Shift': 220,
+        Blend: 4.5,
+        Bass: 2,
+        Treble: 4,
+        Level: 7,
+      },
+    },
+    {
+      id: 8,
+      params: {
+        Drive: 4.5,
+        Mid: 4,
+        'Mid Shift': 220,
+        Blend: 4.5,
+        Bass: 2,
+        Treble: 4,
+        Level: 7,
+      },
+    },
+    {
+      id: 9,
+      params: {
+        Drive: 4.5,
+        Mid: 4,
+        'Mid Shift': 220,
+        Blend: 4,
+        Bass: 2.5,
+        Treble: 4,
+        Level: 7,
+      },
+    },
+    {
+      id: 10,
+      params: {
+        Drive: 4.5,
+        Mid: 4,
+        'Mid Shift': 220,
+        Blend: 4,
+        Bass: 2.5,
+        Treble: 4,
+        Level: 7,
+      },
+    },
+    {
+      id: 11,
+      params: {
+        Drive: 4.5,
+        Mid: 4,
+        'Mid Shift': 220,
+        Blend: 4,
+        Bass: 2.5,
+        Treble: 4,
+        Level: 7,
+      },
+    },
+  ],
+}
