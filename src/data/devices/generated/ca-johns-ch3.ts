@@ -1,8 +1,8 @@
 import type { Device } from '../../../types'
 
-export const caJohnCh3: Device = {
-  id: 'ca-john-ch3',
-  name: 'CA John Ch3',
+export const caJohnsCh3: Device = {
+  id: 'ca-johns-ch3',
+  name: "CA John's Ch3",
   note: 'CA John Ch.3 without a cab.',
   captures: [
     {

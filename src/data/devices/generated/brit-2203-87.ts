@@ -1,12 +1,13 @@
 import type { Device } from '../../../types'
 
-export const brit1987: Device = {
-  id: 'brit-1987',
-  name: 'Brit 1987',
+export const brit220387: Device = {
+  id: 'brit-2203-87',
+  name: 'Brit 2203 87',
   note: "Captured Device: Marshall® JCM800® 1987",
   captures: [
     {
       id: 1,
+      name: 'Brit 1987 1',
       params: {
         Input: '2 High',
         Patchcable: '2 Low to 1 High',
@@ -20,6 +21,7 @@ export const brit1987: Device = {
     },
     {
       id: 2,
+      name: 'Brit 1987 2',
       params: {
         Input: '2 High',
         Patchcable: '2 Low to 1 High',
@@ -33,6 +35,7 @@ export const brit1987: Device = {
     },
     {
       id: 3,
+      name: 'Brit 1987 3',
       params: {
         Input: '2 High',
         Patchcable: '2 Low to 1 High',
@@ -46,6 +49,7 @@ export const brit1987: Device = {
     },
     {
       id: 4,
+      name: 'Brit 1987 4',
       params: {
         Input: '2 High',
         Patchcable: '2 Low to 1 High',
@@ -59,6 +63,7 @@ export const brit1987: Device = {
     },
     {
       id: 5,
+      name: 'Brit 1987 5',
       params: {
         Input: '2 High',
         Patchcable: '2 Low to 1 High',
@@ -72,6 +77,7 @@ export const brit1987: Device = {
     },
     {
       id: 6,
+      name: 'Brit 1987 6',
       params: {
         Input: '2 Low',
         Patchcable: '2 High to 1 Low',
@@ -85,6 +91,7 @@ export const brit1987: Device = {
     },
     {
       id: 7,
+      name: 'Brit 1987 7',
       params: {
         Input: '2 High',
         Patchcable: '2 Low to 1 Low',
@@ -98,6 +105,7 @@ export const brit1987: Device = {
     },
     {
       id: 8,
+      name: 'Brit 1987 8',
       params: {
         Input: '2 High',
         Patchcable: '2 Low to 1 Low',
@@ -111,6 +119,7 @@ export const brit1987: Device = {
     },
     {
       id: 9,
+      name: 'Brit 1987 9',
       params: {
         Input: '2 High',
         Patchcable: '2 Low to 1 Low',
@@ -124,6 +133,7 @@ export const brit1987: Device = {
     },
     {
       id: 10,
+      name: 'Brit 1987 10',
       params: {
         Input: '2 Low',
         Patchcable: 'none',

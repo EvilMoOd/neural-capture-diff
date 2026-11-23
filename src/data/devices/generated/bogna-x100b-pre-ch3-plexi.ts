@@ -162,6 +162,12 @@ export const bognaX100bPreCh3Plexi: Device = {
       },
     },
     {
+      id: 13,
+      name: 'Bogna X100B Pre Ch3 Plexi 13',
+      params: {
+      },
+    },
+    {
       id: 14,
       params: {
         CH: 3,

@@ -7,6 +7,7 @@ export const engMartys: Device = {
   captures: [
     {
       id: 1,
+      name: "ENG Marty's 1",
       params: {
         Channel: 2,
         Gain: 4.8,
@@ -21,6 +22,7 @@ export const engMartys: Device = {
     },
     {
       id: 2,
+      name: "ENG Marty's 2",
       params: {
         Channel: 2,
         Gain: 4.8,
@@ -35,6 +37,7 @@ export const engMartys: Device = {
     },
     {
       id: 3,
+      name: "ENG Marty's 3",
       params: {
         Channel: 2,
         Gain: 6,
@@ -49,6 +52,7 @@ export const engMartys: Device = {
     },
     {
       id: 4,
+      name: "ENG Marty's 4",
       params: {
         Channel: 2,
         Gain: 6,
@@ -63,6 +67,7 @@ export const engMartys: Device = {
     },
     {
       id: 5,
+      name: "ENG Marty's 5",
       params: {
         Channel: 2,
         Gain: 7,
@@ -79,6 +84,7 @@ export const engMartys: Device = {
     },
     {
       id: 6,
+      name: "ENG Marty's 6",
       params: {
         Channel: 1,
         Gain: 7,
@@ -93,6 +99,7 @@ export const engMartys: Device = {
     },
     {
       id: 7,
+      name: "ENG Marty's 7",
       params: {
         Channel: 1,
         Gain: 2,
@@ -103,6 +110,21 @@ export const engMartys: Device = {
         Bright: 'Off',
         'Gain Boost': 'Off',
         Master: 5,
+      },
+    },
+    {
+      id: 8,
+      name: 'ENG Martys 8',
+      params: {
+        Channel: 1,
+        Gain: 2.2,
+        Bass: 9,
+        Middle: 8,
+        Treble: 2,
+        Volume: 10,
+        Bright: 'Off',
+        'Gain Boost': 'Off',
+        Master: 7.5,
       },
     },
   ],

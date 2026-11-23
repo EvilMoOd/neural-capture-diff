@@ -1,8 +1,8 @@
 import type { Device } from '../../../types'
 
-export const caJohnCh2: Device = {
-  id: 'ca-john-ch2',
-  name: 'CA John Ch2',
+export const caJohnsCh2: Device = {
+  id: 'ca-johns-ch2',
+  name: "CA John's Ch2",
   note: 'Quad Cortex Factory Captures This is a capture of Mesa Boogie® JP2C® amp channel 2.',
   captures: [
     {

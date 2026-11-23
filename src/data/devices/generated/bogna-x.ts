@@ -1,12 +1,26 @@
 import type { Device } from '../../../types'
 
-export const twsBognaXCh: Device = {
-  id: 'tws-bogna-x-ch',
-  name: "TW's Bogna X Ch",
+export const bognaX: Device = {
+  id: 'bogna-x',
+  name: 'Bogna X',
   note: "Raw Capture from Bogna X 101B Ch.2 made by Tuomas Wäinölä at Sunbeam Studio.",
   captures: [
     {
       id: 1,
+      name: 'Sunbeam Bogna X Ch2',
+      params: {
+        Volume: 10,
+        Treble: 5,
+        Middle: 5,
+        Bass: 5,
+        Gain: 2,
+        'Boost Gain': 'Low',
+        'Pre EQ': 'B1',
+      },
+    },
+    {
+      id: 2,
+      name: "TW's Bogna X Ch1",
       params: {
         Presence: 6.5,
         Volume: 10,
@@ -19,7 +33,8 @@ export const twsBognaXCh: Device = {
       },
     },
     {
-      id: 2,
+      id: 3,
+      name: "TW's Bogna X Ch2",
       params: {
         Volume: 4,
         Treble: 5,
@@ -33,7 +48,8 @@ export const twsBognaXCh: Device = {
       },
     },
     {
-      id: 3,
+      id: 4,
+      name: "TW's Bogna X Ch3",
       params: {
         Volume: 3.5,
         Treble: 5,
@@ -44,6 +60,12 @@ export const twsBognaXCh: Device = {
         Structure: 'High',
         'Boost Gain': 'High',
         'Pre EQ': 'B2',
+      },
+    },
+    {
+      id: 5,
+      name: 'Sunbeam Bogna X Ch3',
+      params: {
       },
     },
   ],

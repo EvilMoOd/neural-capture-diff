@@ -16,6 +16,53 @@ import path from 'node:path'
 const CACHE_FILE = 'scripts/.cache/captures.json'
 const OUT_DIR = 'src/data/devices/generated'
 
+/** 官方显示名与抓取数据中的设备名不一致时，输出为官方名称 */
+const DISPLAY_NAME = {
+  'Brit 1987': 'Brit 2203 87',
+  'CA John Ch1': "CA John's Ch1",
+  'CA John Ch2': "CA John's Ch2",
+  'CA John Ch3': "CA John's Ch3",
+  'Iba Green 9': 'Iba Green',
+}
+
+/** 这些设备的实际采样名与官方名仅差撇号，右侧表格不展示采样名 */
+const HIDE_CAPTURE_NAME = new Set([
+  "CA John's",
+  "CA John's Ch1",
+  "CA John's Ch2",
+  "CA John's Ch3",
+])
+
+/** 同一台设备在云端被拆成了多个名称，这里合并为同一台设备 */
+const MERGE_INTO = {
+  'Tech41 BDDI Bassman': 'Tech41 BDDI',
+  'Tech41 BDDI HiGain': 'Tech41 BDDI',
+  'Tech41 BDDI Kings': 'Tech41 BDDI',
+  'Tech41 BDDI SV': 'Tech41 BDDI',
+  'Tech41 PSA Brit': 'Tech41 PSA',
+  'Tech41 PSA Brit+Cab': 'Tech41 PSA',
+  'Tech41 PSA Buzz': 'Tech41 PSA',
+  'Tech41 PSA Buzz+Cab': 'Tech41 PSA',
+  'Tech41 PSA Clank': 'Tech41 PSA',
+  'Tech41 PSA Crunch': 'Tech41 PSA',
+  'Tech41 PSA Crunch+Cab': 'Tech41 PSA',
+  'Tech41 PSA Punch+Cab': 'Tech41 PSA',
+  "TW's MadPro": 'Mad Pro',
+  "TW's MadPro 2 w Juhl BB": 'Mad Pro',
+  "TW's MadPro 2 w Juhl HB": 'Mad Pro',
+  'Sunbeam MadPro Ch': 'Mad Pro',
+  "TW's Bogna X Ch": 'Bogna X',
+  'Sunbeam Bogna X Ch': 'Bogna X',
+  'CA MixBass 1 Amp': 'CA MixBass',
+  'CA MixBass 2 Amp': 'CA MixBass',
+  'CA MixBass 3 Amp': 'CA MixBass',
+  'CA MixBass 4 Amp': 'CA MixBass',
+  "ENG Marty's": "ENG Marty's",
+  'ENG Martys': "ENG Marty's",
+  'Pearce Billy Hi': 'Pearce Billy',
+  'Pearce Billy Low': 'Pearce Billy',
+}
+
 const cache = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'))
 const items = cache.items.map((i) => i.search ?? {})
 
@@ -102,36 +149,92 @@ for (const item of items) {
   const group = groups.get(key)
   group.bases.set(base, (group.bases.get(base) ?? 0) + 1)
   const params = parseDescription(item.description)
-  group.entries.push({ num, base, params, note: noteOf(item.description), name: item.name })
+  group.entries.push({
+    num,
+    base,
+    params,
+    note: noteOf(item.description),
+    name: item.name,
+    isEmpty: !(item.description ?? '').trim(),
+  })
 }
 
 // 2. 组装设备
-const stats = { skippedGroups: [], grouped: 0, snapshots: 0 }
+const stats = { skippedGroups: [] }
 const devices = []
+const mergedGroups = new Map()
 for (const group of groups.values()) {
+  const mergeTarget = [...group.bases.keys()]
+    .map((base) => MERGE_INTO[base])
+    .find(Boolean)
+  if (mergeTarget) {
+    const list = mergedGroups.get(mergeTarget) ?? []
+    list.push(group)
+    mergedGroups.set(mergeTarget, list)
+    continue
+  }
   const parsed = group.entries.filter((e) => e.params)
   if (!parsed.length) {
-    stats.skippedGroups.push([...group.bases.keys()].join(' / '))
+    const bases = [...group.bases.keys()]
+    stats.skippedGroups.push(bases.join(' / '))
+    devices.push({
+      name: bases.join(' / '),
+      note: `云端共有 ${group.entries.length} 条 capture，但描述中没有可解析的参数（Settings: N/A 或缺失）。`,
+      captures: [],
+    })
     continue
   }
   // 展示名：优先取有解析结果的那批 capture 的名称前缀
   const baseCount = new Map()
   for (const e of parsed) baseCount.set(e.base, (baseCount.get(e.base) ?? 0) + 1)
-  const name = [...baseCount.entries()].sort((a, b) => b[1] - a[1])[0][0]
+  const baseName = [...baseCount.entries()].sort((a, b) => b[1] - a[1])[0][0]
+  const name = DISPLAY_NAME[baseName] ?? baseName
 
   const byNum = new Map()
   for (const e of parsed) {
     const prev = byNum.get(e.num)
     if (!prev || Object.keys(e.params).length > Object.keys(prev.params).length) byNum.set(e.num, e)
   }
+  // 描述为空的 capture 也保留一行（参数为空），与已有编号重复的仍视为重复上传
+  for (const e of group.entries) {
+    if (e.isEmpty && !e.params && !byNum.has(e.num)) byNum.set(e.num, e)
+  }
   const captures = [...byNum.values()]
     .sort((a, b) => a.num - b.num)
-    .map((e) => ({ id: e.num, params: e.params }))
+    .map((e) => ({
+      id: e.num,
+      // 无参数快照、或实际采样名称与官方设备名不一致时，展示原始采样名称
+      ...(!HIDE_CAPTURE_NAME.has(name) && (!e.params || e.base !== name)
+        ? { name: e.name }
+        : {}),
+      params: e.params ?? {},
+    }))
 
   const note = parsed.find((e) => e.note)?.note
   devices.push({ name, note, captures })
-  stats.grouped++
-  stats.snapshots += captures.length
+}
+// 合并设备：保留全部实际采样（含参数），重新编号后展示
+for (const [name, groups] of mergedGroups) {
+  const entries = groups
+    .flatMap((group) => group.entries)
+    // 有参数的采样排在前面，保证默认基准 #1 可对比
+    .sort(
+      (a, b) =>
+        Number(!a.params) - Number(!b.params) || a.name.localeCompare(b.name),
+    )
+  const hasParams = entries.some((entry) => entry.params)
+  const noteGroup = [...groups].sort((a, b) => b.entries.length - a.entries.length)[0]
+  devices.push({
+    name,
+    note: hasParams
+      ? noteGroup.entries.find((entry) => entry.note)?.note
+      : `云端共有 ${entries.length} 条 capture，但描述中没有可解析的参数（Settings: N/A 或缺失）。`,
+    captures: entries.map((entry, index) => ({
+      id: index + 1,
+      name: entry.name,
+      params: entry.params ?? {},
+    })),
+  })
 }
 devices.sort((a, b) => a.name.localeCompare(b.name))
 
@@ -166,18 +269,23 @@ for (const device of devices) {
   lines.push(`  id: ${q(slug)},`)
   lines.push(`  name: ${q(device.name)},`)
   if (device.note) lines.push(`  note: ${q(device.note)},`)
-  lines.push('  captures: [')
-  for (const capture of device.captures) {
-    lines.push('    {')
-    lines.push(`      id: ${capture.id},`)
-    lines.push('      params: {')
-    for (const [k, v] of Object.entries(capture.params)) {
-      lines.push(`        ${keyLiteral(k)}: ${typeof v === 'number' ? v : q(v)},`)
+  if (!device.captures.length) {
+    lines.push('  captures: [],')
+  } else {
+    lines.push('  captures: [')
+    for (const capture of device.captures) {
+      lines.push('    {')
+      lines.push(`      id: ${capture.id},`)
+      if (capture.name) lines.push(`      name: ${q(capture.name)},`)
+      lines.push('      params: {')
+      for (const [k, v] of Object.entries(capture.params)) {
+        lines.push(`        ${keyLiteral(k)}: ${typeof v === 'number' ? v : q(v)},`)
+      }
+      lines.push('      },')
+      lines.push('    },')
     }
-    lines.push('      },')
-    lines.push('    },')
+    lines.push('  ],')
   }
-  lines.push('  ],')
   lines.push('}')
   lines.push('')
 
@@ -196,7 +304,15 @@ indexLines.push(']')
 indexLines.push('')
 fs.writeFileSync(path.join(OUT_DIR, 'index.ts'), indexLines.join('\n'))
 
-console.log(`设备：${stats.grouped}，快照：${stats.snapshots}`)
+const paramDevices = devices.filter((device) =>
+  device.captures.some((capture) => Object.keys(capture.params).length),
+).length
+const paramSnapshots = devices.reduce(
+  (sum, device) =>
+    sum + device.captures.filter((capture) => Object.keys(capture.params).length).length,
+  0,
+)
+console.log(`设备：${paramDevices}（有参数）+ ${devices.length - paramDevices}（无参数），快照：${paramSnapshots}`)
 console.log(`跳过（无可解析 Settings）：${stats.skippedGroups.length}`)
 for (const name of stats.skippedGroups) console.log('  -', name)
 console.log(`输出目录：${OUT_DIR}`)

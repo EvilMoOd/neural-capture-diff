@@ -113,5 +113,11 @@ export const tuneroyalMk2: Device = {
         Bass: 5,
       },
     },
+    {
+      id: 13,
+      name: 'TuneRoyal MK2 13',
+      params: {
+      },
+    },
   ],
 }

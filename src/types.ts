@@ -15,6 +15,8 @@ export interface Device {
   category?: string
   /** 采样原型设备 */
   basedOn?: string
+  /** 是否为 Capture V2 设备（标题旁显示 V2 标签） */
+  v2?: boolean
   /** 设备/capture 说明 */
   note?: string
   captures: Capture[]

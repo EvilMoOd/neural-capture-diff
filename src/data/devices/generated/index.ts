@@ -7,6 +7,7 @@ import { aggiHammer500 } from './aggi-hammer-500'
 import { ampedSuperValvePro } from './amped-super-valve-pro'
 import { ampedSvClassic } from './amped-sv-classic'
 import { ampedV5b } from './amped-v5b'
+import { animaFuzz } from './anima-fuzz'
 import { archetypeTomMorello } from './archetype-tom-morello'
 import { bassMarkLm3 } from './bass-mark-lm3'
 import { bbdSonicmax } from './bbd-sonicmax'
@@ -15,6 +16,7 @@ import { bognaBloom } from './bogna-bloom'
 import { bognaFish } from './bogna-fish'
 import { bognaFish290 } from './bogna-fish-290'
 import { bognaUber } from './bogna-uber'
+import { bognaX } from './bogna-x'
 import { bognaXBlue } from './bogna-x-blue'
 import { bognaX100bCh1 } from './bogna-x100b-ch1'
 import { bognaX100bCh2 } from './bogna-x100b-ch2'
@@ -28,7 +30,7 @@ import { bognaX100bPreCh2Hi } from './bogna-x100b-pre-ch2-hi'
 import { bognaX100bPreCh2Lo } from './bogna-x100b-pre-ch2-lo'
 import { bognaX100bPreCh3Lead } from './bogna-x100b-pre-ch3-lead'
 import { bognaX100bPreCh3Plexi } from './bogna-x100b-pre-ch3-plexi'
-import { brit1987 } from './brit-1987'
+import { brit220387 } from './brit-2203-87'
 import { brit2210 } from './brit-2210'
 import { brit2210PaEl34 } from './brit-2210-pa-el34'
 import { brit2555Clean } from './brit-2555-clean'
@@ -38,16 +40,14 @@ import { britPaEl34 } from './brit-pa-el34'
 import { ca3axe } from './ca-3axe'
 import { ca3axe290 } from './ca-3axe-290'
 import { ca400 } from './ca-400'
+import { caBasswalk } from './ca-basswalk'
 import { caBigbrick750 } from './ca-bigbrick750'
-import { caJohnCh1 } from './ca-john-ch1'
-import { caJohnCh2 } from './ca-john-ch2'
-import { caJohnCh3 } from './ca-john-ch3'
 import { caJohns } from './ca-johns'
+import { caJohnsCh1 } from './ca-johns-ch1'
+import { caJohnsCh2 } from './ca-johns-ch2'
+import { caJohnsCh3 } from './ca-johns-ch3'
 import { caM6rifle } from './ca-m6rifle'
-import { caMixbass1Amp } from './ca-mixbass-1-amp'
-import { caMixbass2Amp } from './ca-mixbass-2-amp'
-import { caMixbass3Amp } from './ca-mixbass-3-amp'
-import { caMixbass4Amp } from './ca-mixbass-4-amp'
+import { caMixbass } from './ca-mixbass'
 import { caMkcc } from './ca-mkcc'
 import { caMkiiired } from './ca-mkiiired'
 import { caPaSim290 } from './ca-pa-sim290'
@@ -74,7 +74,11 @@ import { dCellPa6550 } from './d-cell-pa-6550'
 import { darkglassUltimate } from './darkglass-ultimate'
 import { dcHeavyCrusader } from './dc-heavy-crusader'
 import { douglasAo900 } from './douglas-ao900'
+import { douglasAou } from './douglas-aou'
+import { douglasB7k } from './douglas-b7k'
 import { douglasMt900v2 } from './douglas-mt900v2'
+import { douglasVmt } from './douglas-vmt'
+import { douglasVmtB7k } from './douglas-vmt-b7k'
 import { douglasVu } from './douglas-vu'
 import { dovre50 } from './dovre-50'
 import { drywoodPurpleHorror } from './drywood-purple-horror'
@@ -82,7 +86,6 @@ import { dumbbellOds } from './dumbbell-ods'
 import { engEnergy } from './eng-energy'
 import { engFeral120 } from './eng-feral-120'
 import { engMartys } from './eng-martys'
-import { engMartys2 } from './eng-martys-2'
 import { engPa930 } from './eng-pa-930'
 import { engRainbow } from './eng-rainbow'
 import { ev101iiisEl34 } from './ev101iiis-el34'
@@ -94,7 +97,7 @@ import { fryedSig10 } from './fryed-sig10'
 import { gametraderMagma } from './gametrader-magma'
 import { gibbGa8 } from './gibb-ga8'
 import { ibaBasicFuzz } from './iba-basic-fuzz'
-import { ibaGreen9 } from './iba-green-9'
+import { ibaGreen } from './iba-green'
 import { ibaSonicDist9 } from './iba-sonic-dist-9'
 import { loveBeliever } from './love-believer'
 import { loveBenderMk3 } from './love-bender-mk3'
@@ -103,6 +106,7 @@ import { loveDlx } from './love-dlx'
 import { loveDrive11 } from './love-drive-11'
 import { loveFuzzLordIii } from './love-fuzz-lord-iii'
 import { loveTm } from './love-tm'
+import { madPro } from './mad-pro'
 import { madproGolden } from './madpro-golden'
 import { madproSimpleod } from './madpro-simpleod'
 import { metalxM1kClean } from './metalx-m1k-clean'
@@ -118,26 +122,28 @@ import { omgPaKt66 } from './omg-pa-kt66'
 import { otsoBenderMk1 } from './otso-bender-mk1'
 import { paulsMt16 } from './pauls-mt16'
 import { peaceBc1 } from './peace-bc1'
+import { pearceBilly } from './pearce-billy'
 import { pv505sig } from './pv-505sig'
 import { rangeAd200 } from './range-ad200'
 import { rangeRock } from './range-rock'
 import { rangeRverb } from './range-rverb'
 import { rangeStormverb } from './range-stormverb'
 import { reusBenderMk2 } from './reus-bender-mk2'
+import { rodentSv } from './rodent-sv'
 import { rodentV5b } from './rodent-v5b'
 import { rvAmpG120 } from './rv-amp-g120'
 import { scityB120 } from './scity-b120'
-import { sunbeamBognaXCh } from './sunbeam-bogna-x-ch'
 import { superBolt } from './super-bolt'
 import { symmetricalComp } from './symmetrical-comp'
 import { teabird } from './teabird'
+import { tech41Bddi } from './tech41-bddi'
+import { tech41Ged } from './tech41-ged'
 import { tech41Ged12 } from './tech41-ged12'
+import { tech41Psa } from './tech41-psa'
 import { tech41Vtbassdlx } from './tech41-vtbassdlx'
 import { trademarkFuzz } from './trademark-fuzz'
 import { tuneroyalMk2 } from './tuneroyal-mk2'
 import { twTubeDrive } from './tw-tube-drive'
-import { twsBognaXCh } from './tws-bogna-x-ch'
-import { twsMadpro } from './tws-madpro'
 import { ukC1064 } from './uk-c10-64'
 import { unsoundHyperPozzum } from './unsound-hyper-pozzum'
 import { unsoundKato } from './unsound-kato'
@@ -172,6 +178,7 @@ export const generatedDevices: Device[] = [
   ampedSuperValvePro,
   ampedSvClassic,
   ampedV5b,
+  animaFuzz,
   archetypeTomMorello,
   bassMarkLm3,
   bbdSonicmax,
@@ -180,6 +187,7 @@ export const generatedDevices: Device[] = [
   bognaFish,
   bognaFish290,
   bognaUber,
+  bognaX,
   bognaXBlue,
   bognaX100bCh1,
   bognaX100bCh2,
@@ -193,7 +201,7 @@ export const generatedDevices: Device[] = [
   bognaX100bPreCh2Lo,
   bognaX100bPreCh3Lead,
   bognaX100bPreCh3Plexi,
-  brit1987,
+  brit220387,
   brit2210,
   brit2210PaEl34,
   brit2555Clean,
@@ -203,16 +211,14 @@ export const generatedDevices: Device[] = [
   ca3axe,
   ca3axe290,
   ca400,
+  caBasswalk,
   caBigbrick750,
-  caJohnCh1,
-  caJohnCh2,
-  caJohnCh3,
   caJohns,
+  caJohnsCh1,
+  caJohnsCh2,
+  caJohnsCh3,
   caM6rifle,
-  caMixbass1Amp,
-  caMixbass2Amp,
-  caMixbass3Amp,
-  caMixbass4Amp,
+  caMixbass,
   caMkcc,
   caMkiiired,
   caPaSim290,
@@ -239,7 +245,11 @@ export const generatedDevices: Device[] = [
   darkglassUltimate,
   dcHeavyCrusader,
   douglasAo900,
+  douglasAou,
+  douglasB7k,
   douglasMt900v2,
+  douglasVmt,
+  douglasVmtB7k,
   douglasVu,
   dovre50,
   drywoodPurpleHorror,
@@ -247,7 +257,6 @@ export const generatedDevices: Device[] = [
   engEnergy,
   engFeral120,
   engMartys,
-  engMartys2,
   engPa930,
   engRainbow,
   ev101iiisEl34,
@@ -259,7 +268,7 @@ export const generatedDevices: Device[] = [
   gametraderMagma,
   gibbGa8,
   ibaBasicFuzz,
-  ibaGreen9,
+  ibaGreen,
   ibaSonicDist9,
   loveBeliever,
   loveBenderMk3,
@@ -268,6 +277,7 @@ export const generatedDevices: Device[] = [
   loveDrive11,
   loveFuzzLordIii,
   loveTm,
+  madPro,
   madproGolden,
   madproSimpleod,
   metalxM1kClean,
@@ -283,26 +293,28 @@ export const generatedDevices: Device[] = [
   otsoBenderMk1,
   paulsMt16,
   peaceBc1,
+  pearceBilly,
   pv505sig,
   rangeAd200,
   rangeRock,
   rangeRverb,
   rangeStormverb,
   reusBenderMk2,
+  rodentSv,
   rodentV5b,
   rvAmpG120,
   scityB120,
-  sunbeamBognaXCh,
   superBolt,
   symmetricalComp,
   teabird,
+  tech41Bddi,
+  tech41Ged,
   tech41Ged12,
+  tech41Psa,
   tech41Vtbassdlx,
   trademarkFuzz,
   tuneroyalMk2,
   twTubeDrive,
-  twsBognaXCh,
-  twsMadpro,
   ukC1064,
   unsoundHyperPozzum,
   unsoundKato,

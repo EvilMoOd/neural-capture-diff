@@ -30,6 +30,14 @@ const selectedDevice = computed(
   () => devices.find((device) => device.id === selectedId.value) ?? null,
 )
 
+/** 合并设备只有采样名称、没有参数，此时不展示基准切换提示 */
+const selectedHasParams = computed(
+  () =>
+    selectedDevice.value?.captures.some(
+      (capture) => Object.keys(capture.params).length > 0,
+    ) ?? false,
+)
+
 function selectDevice(id: string) {
   selectedId.value = id
   sidebarOpen.value = false
@@ -98,16 +106,26 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
         </div>
         <template v-if="selectedDevice">
           <header class="device-header">
-            <h2>{{ selectedDevice.name }}</h2>
+            <h2>
+              {{ selectedDevice.name }}
+              <span v-if="selectedDevice.v2" class="v2-tag" title="Capture V2">V2</span>
+            </h2>
             <p class="meta">
               <template v-if="selectedDevice.category">{{ selectedDevice.category }} · </template>
               <template v-if="selectedDevice.brand">{{ selectedDevice.brand }} · </template>
-              {{ selectedDevice.captures.length }} 个快照 · 点击快照编号可切换基准
+              <template v-if="selectedDevice.captures.length">
+                <template v-if="selectedHasParams">
+                  {{ selectedDevice.captures.length }} 个快照 · 点击快照编号可切换基准
+                </template>
+                <template v-else>{{ selectedDevice.captures.length }} 条采样</template>
+              </template>
+              <template v-else>无可解析的参数快照</template>
             </p>
             <p v-if="selectedDevice.basedOn" class="based-on">基于 {{ selectedDevice.basedOn }}</p>
             <p v-if="selectedDevice.note" class="note">{{ selectedDevice.note }}</p>
           </header>
-          <CaptureTable :device="selectedDevice" />
+          <CaptureTable v-if="selectedDevice.captures.length" :device="selectedDevice" />
+          <p v-else class="empty">该设备的 capture 描述中没有可解析的参数，暂无可展示的数据。</p>
         </template>
         <p v-else class="empty">暂无设备数据</p>
       </main>
@@ -256,6 +274,19 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
 
 .device-header h2 {
   margin: 0 0 4px;
+}
+
+.v2-tag {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  vertical-align: middle;
 }
 
 .meta {

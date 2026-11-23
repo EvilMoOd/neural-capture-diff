@@ -266,6 +266,12 @@ export const bognaX100bPreCh3Lead: Device = {
       },
     },
     {
+      id: 21,
+      name: 'Bogna X100B Pre Ch3 Lead 21',
+      params: {
+      },
+    },
+    {
       id: 22,
       params: {
         CH: 3,

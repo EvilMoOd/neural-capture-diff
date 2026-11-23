@@ -104,7 +104,8 @@ const groups = computed(() => {
               <span class="device-name">{{ device.name }}</span>
               <span class="device-meta">
                 <template v-if="device.brand">{{ device.brand }} · </template>
-                {{ device.captures.length }} 个快照
+                <template v-if="device.captures.length">{{ device.captures.length }} 个快照</template>
+                <template v-else>无参数</template>
               </span>
             </button>
             <button

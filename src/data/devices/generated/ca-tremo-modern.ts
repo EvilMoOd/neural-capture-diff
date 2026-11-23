@@ -6,6 +6,12 @@ export const caTremoModern: Device = {
   note: 'Quad Cortex Factory Captures This is a capture of Mesa Boogie® Trem-O-Verb® Dual Rectifier® amp.',
   captures: [
     {
+      id: 1,
+      name: 'CA Tremo Modern 1',
+      params: {
+      },
+    },
+    {
       id: 2,
       params: {
         Master: 5,
